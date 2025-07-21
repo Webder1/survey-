@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sweet Mama's Chicken | Customer Experience Survey</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #fdfdfd;
+      color: #222;
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+    h1, h2 {
+      text-align: center;
+      color: #b23b00;
+    }
+    label {
+      display: block;
+      margin-top: 1.5rem;
+      font-weight: bold;
+    }
+    input[type="text"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 0.6rem;
+      margin-top: 0.4rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+    textarea {
+      height: 120px;
+    }
+    .stars {
+      display: flex;
+      gap: 0.4rem;
+      font-size: 1.3rem;
+    }
+    .stars input[type="radio"] {
+      display: none;
+    }
+    .stars label {
+      cursor: pointer;
+      color: #ccc;
+    }
+    .stars input[type="radio"]:checked ~ label {
+      color: #ffc107;
+    }
+    .submit-btn {
+      margin-top: 2rem;
+      background-color: #b23b00;
+      color: white;
+      padding: 1rem;
+      border: none;
+      border-radius: 8px;
+      width: 100%;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+    .submit-btn:hover {
+      background-color: #8d2f00;
+    }
+    .thank-you {
+      margin-top: 2rem;
+      background-color: #f6f1ee;
+      padding: 1.5rem;
+      border-left: 6px solid #b23b00;
+    }
+  </style>
+</head>
+<body>
+  <h1>Sweet Mama's Chicken</h1>
+  <h2>Customer Experience Survey</h2>
+  <p style="text-align: center; max-width: 600px; margin: auto;">We appreciate your honest feedback. Whether your experience was exceptional or needs improvement, your comments help us grow and serve you better. Thank you for taking a moment to help us improve Sweet Mama’s Chicken!</p>
+
+  <form id="surveyForm">
+
+    <label for="server">Who was your server today?</label>
+    <select id="server" name="server">
+      <option value="" disabled selected>Select your server</option>
+      <option value="Samantha">Samantha</option>
+      <option value="Dante">Dante</option>
+      <option value="Lilly">Lilly</option>
+      <option value="Marcus">Marcus</option>
+      <option value="Autumn">Autumn</option>
+    </select>
+
+    <label>Rate your server’s friendliness and professionalism:</label>
+    <div class="stars">
+      <input type="radio" id="server5" name="serverRating" value="5"><label for="server5">⭐</label>
+      <input type="radio" id="server4" name="serverRating" value="4"><label for="server4">⭐</label>
+      <input type="radio" id="server3" name="serverRating" value="3"><label for="server3">⭐</label>
+      <input type="radio" id="server2" name="serverRating" value="2"><label for="server2">⭐</label>
+      <input type="radio" id="server1" name="serverRating" value="1"><label for="server1">⭐</label>
+    </div>
+
+    <label for="meal">How would you rate the quality of your meal?</label>
+    <div class="stars">
+      <input type="radio" id="meal5" name="mealRating" value="5"><label for="meal5">⭐</label>
+      <input type="radio" id="meal4" name="mealRating" value="4"><label for="meal4">⭐</label>
+      <input type="radio" id="meal3" name="mealRating" value="3"><label for="meal3">⭐</label>
+      <input type="radio" id="meal2" name="mealRating" value="2"><label for="meal2">⭐</label>
+      <input type="radio" id="meal1" name="mealRating" value="1"><label for="meal1">⭐</label>
+    </div>
+
+    <label for="ambience">How would you rate the restaurant's atmosphere?</label>
+    <div class="stars">
+      <input type="radio" id="amb5" name="ambienceRating" value="5"><label for="amb5">⭐</label>
+      <input type="radio" id="amb4" name="ambienceRating" value="4"><label for="amb4">⭐</label>
+      <input type="radio" id="amb3" name="ambienceRating" value="3"><label for="amb3">⭐</label>
+      <input type="radio" id="amb2" name="ambienceRating" value="2"><label for="amb2">⭐</label>
+      <input type="radio" id="amb1" name="ambienceRating" value="1"><label for="amb1">⭐</label>
+    </div>
+
+    <label for="feedback">What could we do to improve your experience?</label>
+    <textarea id="feedback" name="feedback" placeholder="We genuinely value your thoughts — let us know what could have made your visit better."></textarea>
+
+    <label for="comments">Any other comments or shout-outs?</label>
+    <textarea id="comments" name="comments" placeholder="Want to recognize a team member or suggest a new menu item? Drop it here!"></textarea>
+
+    <button type="submit" class="submit-btn">Submit Your Feedback</button>
+  </form>
+
+  <div class="thank-you" id="thankYou" style="display:none;">
+    <h3>Thank You!</h3>
+    <p>Your feedback has been submitted successfully. We promise to take your thoughts seriously and continue striving for excellence at Sweet Mama’s Chicken. See you again soon!</p>
+  </div>
+
+  <script>
+    document.getElementById('surveyForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      document.getElementById('surveyForm').style.display = 'none';
+      document.getElementById('thankYou').style.display = 'block';
+    });
+  </script>
+</body>
+</html>
